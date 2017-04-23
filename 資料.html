@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>test</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(171, 178, 191); overflow: auto; background-color: rgb(40, 44, 52); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(124, 135, 156); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(82, 139, 255); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(124, 135, 156); border-color: rgb(75, 83, 98); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(75, 83, 98); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(75, 83, 98); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(58, 63, 75); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(49, 54, 63); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(75, 83, 98) rgb(75, 83, 98) rgb(62, 68, 81); background-color: rgb(58, 63, 75); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #282c34;
+  color: #abb2bf;
+}
+pre.editor-colors .line.cursor-line {
+  background-color: rgba(153, 187, 255, 0.04);
+}
+pre.editor-colors .invisible {
+  color: #abb2bf;
+}
+pre.editor-colors .cursor {
+  border-left: 2px solid #528bff;
+}
+pre.editor-colors .selection .region {
+  background-color: #3e4451;
+}
+pre.editor-colors .bracket-matcher .region {
+  border-bottom: 1px solid #528bff;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .indent-guide {
+  color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .wrap-guide {
+  background-color: rgba(171, 178, 191, 0.15);
+}
+pre.editor-colors .find-result .region.region.region,
+pre.editor-colors .current-result .region.region.region {
+  border-radius: 2px;
+  background-color: rgba(82, 139, 255, 0.24);
+  transition: border-color 0.4s;
+}
+pre.editor-colors .find-result .region.region.region {
+  border: 2px solid transparent;
+}
+pre.editor-colors .current-result .region.region.region {
+  border: 2px solid #528bff;
+  transition-duration: .1s;
+}
+pre.editor-colors .gutter .line-number {
+  color: #636d83;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  color: #abb2bf;
+  background-color: #2c313a;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right {
+  color: #abb2bf;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(224, 82, 82, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #abb2bf;
+}
+.syntax--comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.syntax--comment .syntax--markup.syntax--link {
+  color: #5c6370;
+}
+.syntax--entity.syntax--name.syntax--type {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  color: #98c379;
+}
+.syntax--keyword {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--control {
+  color: #c678dd;
+}
+.syntax--keyword.syntax--operator {
+  color: #abb2bf;
+}
+.syntax--keyword.syntax--other.syntax--special-method {
+  color: #61afef;
+}
+.syntax--keyword.syntax--other.syntax--unit {
+  color: #d19a66;
+}
+.syntax--storage {
+  color: #c678dd;
+}
+.syntax--storage.syntax--type.syntax--annotation,
+.syntax--storage.syntax--type.syntax--primitive {
+  color: #c678dd;
+}
+.syntax--storage.syntax--modifier.syntax--package,
+.syntax--storage.syntax--modifier.syntax--import {
+  color: #abb2bf;
+}
+.syntax--constant {
+  color: #d19a66;
+}
+.syntax--constant.syntax--variable {
+  color: #d19a66;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--numeric {
+  color: #d19a66;
+}
+.syntax--constant.syntax--other.syntax--color {
+  color: #56b6c2;
+}
+.syntax--constant.syntax--other.syntax--symbol {
+  color: #56b6c2;
+}
+.syntax--variable {
+  color: #e06c75;
+}
+.syntax--variable.syntax--interpolation {
+  color: #be5046;
+}
+.syntax--variable.syntax--parameter {
+  color: #abb2bf;
+}
+.syntax--string {
+  color: #98c379;
+}
+.syntax--string.syntax--regexp {
+  color: #56b6c2;
+}
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
+  color: #e5c07b;
+}
+.syntax--string.syntax--other.syntax--link {
+  color: #e06c75;
+}
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: #5c6370;
+}
+.syntax--punctuation.syntax--definition.syntax--method-parameters,
+.syntax--punctuation.syntax--definition.syntax--function-parameters,
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--separator,
+.syntax--punctuation.syntax--definition.syntax--seperator,
+.syntax--punctuation.syntax--definition.syntax--array {
+  color: #abb2bf;
+}
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
+  color: #61afef;
+}
+.syntax--punctuation.syntax--definition.syntax--bold {
+  color: #e5c07b;
+  font-weight: bold;
+}
+.syntax--punctuation.syntax--definition.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--punctuation.syntax--section.syntax--embedded {
+  color: #be5046;
+}
+.syntax--punctuation.syntax--section.syntax--method,
+.syntax--punctuation.syntax--section.syntax--class,
+.syntax--punctuation.syntax--section.syntax--inner-class {
+  color: #abb2bf;
+}
+.syntax--support.syntax--class {
+  color: #e5c07b;
+}
+.syntax--support.syntax--type {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function {
+  color: #56b6c2;
+}
+.syntax--support.syntax--function.syntax--any-method {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #e5c07b;
+}
+.syntax--entity.syntax--name.syntax--section {
+  color: #61afef;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #e06c75;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #d19a66;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
+  color: #61afef;
+}
+.syntax--meta.syntax--class {
+  color: #e5c07b;
+}
+.syntax--meta.syntax--class.syntax--body {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--method-call,
+.syntax--meta.syntax--method {
+  color: #abb2bf;
+}
+.syntax--meta.syntax--definition.syntax--variable {
+  color: #e06c75;
+}
+.syntax--meta.syntax--link {
+  color: #d19a66;
+}
+.syntax--meta.syntax--require {
+  color: #61afef;
+}
+.syntax--meta.syntax--selector {
+  color: #c678dd;
+}
+.syntax--meta.syntax--separator {
+  background-color: #373b41;
+  color: #abb2bf;
+}
+.syntax--meta.syntax--tag {
+  color: #abb2bf;
+}
+.syntax--underline {
+  text-decoration: underline;
+}
+.syntax--none {
+  color: #abb2bf;
+}
+.syntax--invalid.syntax--deprecated {
+  color: #523d14 !important;
+  background-color: #e0c285 !important;
+}
+.syntax--invalid.syntax--illegal {
+  color: #ffffff !important;
+  background-color: #e05252 !important;
+}
+.syntax--markup.syntax--bold {
+  color: #d19a66;
+  font-weight: bold;
+}
+.syntax--markup.syntax--changed {
+  color: #c678dd;
+}
+.syntax--markup.syntax--deleted {
+  color: #e06c75;
+}
+.syntax--markup.syntax--italic {
+  color: #c678dd;
+  font-style: italic;
+}
+.syntax--markup.syntax--heading {
+  color: #e06c75;
+}
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+  color: #61afef;
+}
+.syntax--markup.syntax--link {
+  color: #56b6c2;
+}
+.syntax--markup.syntax--inserted {
+  color: #98c379;
+}
+.syntax--markup.syntax--quote {
+  color: #d19a66;
+}
+.syntax--markup.syntax--raw {
+  color: #98c379;
+}
+.syntax--source.syntax--c .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cpp .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--cs .syntax--keyword.syntax--operator {
+  color: #c678dd;
+}
+.syntax--source.syntax--css .syntax--property-name,
+.syntax--source.syntax--css .syntax--property-value {
+  color: #828997;
+}
+.syntax--source.syntax--css .syntax--property-name.syntax--support,
+.syntax--source.syntax--css .syntax--property-value.syntax--support {
+  color: #abb2bf;
+}
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+}
+.syntax--source.syntax--gfm .syntax--link .syntax--entity {
+  color: #61afef;
+}
+.syntax--source.syntax--go .syntax--storage.syntax--type.syntax--string {
+  color: #c678dd;
+}
+.syntax--source.syntax--ini .syntax--keyword.syntax--other.syntax--definition.syntax--ini {
+  color: #e06c75;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--modifier.syntax--import {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--storage.syntax--type {
+  color: #e5c07b;
+}
+.syntax--source.syntax--java .syntax--keyword.syntax--operator.syntax--instanceof {
+  color: #c678dd;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair {
+  color: #e06c75;
+}
+.syntax--source.syntax--java-properties .syntax--meta.syntax--key-pair > .syntax--punctuation {
+  color: #abb2bf;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator {
+  color: #56b6c2;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--delete,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--in,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--of,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--instanceof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--new,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--typeof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--void {
+  color: #c678dd;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation.syntax--string {
+  color: #e06c75;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--value.syntax--json > .syntax--string.syntax--quoted.syntax--json > .syntax--punctuation {
+  color: #98c379;
+}
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--dictionary.syntax--json > .syntax--constant.syntax--language.syntax--json,
+.syntax--source.syntax--json .syntax--meta.syntax--structure.syntax--array.syntax--json > .syntax--constant.syntax--language.syntax--json {
+  color: #56b6c2;
+}
+.syntax--source.syntax--ruby .syntax--constant.syntax--other.syntax--symbol > .syntax--punctuation {
+  color: inherit;
+}
+.syntax--source.syntax--python .syntax--keyword.syntax--operator.syntax--logical.syntax--python {
+  color: #c678dd;
+}
+.syntax--source.syntax--python .syntax--variable.syntax--parameter {
+  color: #d19a66;
+}
+</style>
+  </head>
+  <body class='markdown-preview' data-use-github-style><h1 id="c-icpc-">C言語講習会　資料　ICPCチャレンジ部</h1>
+<ul>
+<li>目次<ol>
+<li><a href="#&#x51FA;&#x529B;">出力</a></li>
+<li><a href="#&#x5909;&#x6570;">変数</a></li>
+<li><a href="#&#x5165;&#x529B;">入力</a></li>
+<li><a href="#&#x6761;&#x4EF6;&#x5206;&#x5C90;">条件分岐</a></li>
+<li><a href="#&#x7E70;&#x308A;&#x8FD4;&#x3057;A">繰り返し（定数回）</a></li>
+<li><a href="#&#x7E70;&#x308A;&#x8FD4;&#x3057;B">繰り返し（不定回）</a></li>
+<li><a href="#&#x914D;&#x5217;">配列</a></li>
+<li><a href="#&#x6587;&#x5B57;&#x5217;">文字列</a></li>
+<li><a href="#&#x95A2;&#x6570;">関数</a></li>
+</ol>
+</li>
+</ul>
+<p><a name="&#x51FA;&#x529B;"> </a></p>
+<ol>
+<li><p>出力</p>
+<ul>
+<li><p>C言語では、<code>printf</code>という関数を使って出力を行います。</p>
+<ul>
+<li><code>printf</code>のfは、formatの略</li>
+<li>使い方は、<code>printf(&quot;hogehoge&quot;)</code>のように、<strong>(&quot;&quot;)</strong> の中に書いた文字が出力される。</li>
+</ul>
+</li>
+<li><p>実際に、書いてみよう。</p>
+<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--preprocessor syntax--include syntax--c"><span class="syntax--keyword syntax--control syntax--directive syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--directive syntax--c"><span>#</span></span><span>include</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--other syntax--lt-gt syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&lt;</span></span><span>stdio.h</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span class="syntax--meta syntax--function syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--entity syntax--name syntax--function syntax--c"><span>main</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>Hello,&nbsp;World</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>return</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></div></pre>
+</li>
+<li>書いたら、実行してみましょう。<ul>
+<li>正しく書けていれば、<strong>Hello, World</strong> と表示されるはずです。</li>
+<li><code>printf</code>の中の<code>\n</code>は、改行を表す。</li>
+</ul>
+</li>
+<li>実行結果が、正しかったら、提出してみよう！！<ul>
+<li><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_1_A">問題ページ</a>にアクセスして、右上の提出フォームから、提出してみよう！！</li>
+</ul>
+</li>
+<li>正解すると、 <strong>AC</strong> と表示されます。<ul>
+<li>ACはAcceptの略で、プログラムが正しい結果を返したことを表す。</li>
+<li>他にも、以下のような状態がある。<table><tr>
+ <td>略称</td>
+ <td>名称</td>
+ <td>意味</td>
+</tr><tr>
+ <td>AC </td>
+ <td>Accept</td>
+ <td>正解、正しい答えを返した</td>
+</tr><tr>
+ <td> WA</td>
+ <td>Wrong Answer</td>
+ <td>誤答、間違った結果を返した</td>
+</tr><tr>
+ <td> TLE</td>
+ <td>Time Limit Exceeded</td>
+ <td>制限時間内にプログラムが終了しなかった</td>
+</tr><tr>
+ <td> MLE</td>
+ <td>Memory Limit Exceeded</td>
+ <td>メモリ制限を超えてメモリを使用した</td>
+</tr><tr>
+ <td> RE</td>
+ <td>Runtime Error</td>
+ <td>プログラム実行中にエラーが発生した</td>
+</tr></table>
+
+</li>
+</ul>
+</li>
+</ul>
+<p><a name="&#x5909;&#x6570;"> </a></p>
+</li>
+<li><p>変数</p>
+<ul>
+<li>プログラム中で、数字や文字などのデータを扱うためには、<strong>変数</strong> というものを使う。<ul>
+<li>変数とは、データを保存するための箱のようなもの。</li>
+</ul>
+</li>
+<li>変数を使うためには、まず、<strong>宣言</strong> を行う必要がある。<ul>
+<li><code>型名　変数名;</code>の順で宣言を行う。</li>
+<li>型は、扱うデータの種類を表す。<table><tr><td>型名</td><td>種類</td><td>サイズ</td><td>範囲</td></tr>
+<tr><td>int</td><td>整数型</td><td>32bit</td><td>-2^31~2^31-1</td></tr>
+<tr><td>long long</td><td>整数型</td><td>64bit</td><td>-2^63~2^63-1</td></tr>
+<tr><td>double</td><td>浮動小数点数型</td><td>64bit</td><td>おおよそ-10^308~10^308で<br>15桁の精度</td></tr>
+<tr><td>char</td><td>文字型</td><td>8bit</td><td>-2^7~2^7-1</td></tr></table></li>
+<li>例えば、int型の変数numを宣伝する場合は、<code>int num;</code>のように書く。</li>
+</ul>
+</li>
+<li>変数には、<code>=</code>を使って、値を代入することができる。<ul>
+<li>プログラム中では、<strong>=</strong> は等号ではなく、<strong>代入</strong> として用いる。</li>
+<li>numに10を代入するコードは、<code>num=10;</code>のように書く。</li>
+<li>文字を代入するときは、文字を <strong>&#39;a&#39;</strong> のように、シングルクウォーテーションで囲む。</li>
+<li>文字自体も一つの数字である（ <a href="http://www9.plala.or.jp/sgwr-t/c_sub/ascii.html">ASCIIコード</a>等）。</li>
+</ul>
+</li>
+<li>変数は、四則演算を行うことができる。<ul>
+<li>例えば、num1とnum2をたす時には、<code>num1+num2</code> のように書く。<table><tr><td>演算</td><td>記号</td></tr>
+<tr><td>足し算</td><td> + </td></tr>
+<tr><td>引き算</td><td> - </td></tr>
+<tr><td>掛け算</td><td> * </td></tr>
+<tr><td>割り算（商）</td><td> / </td></tr>
+<tr><td>割り算（余り）</td><td> % </td></tr></table></li>
+</ul>
+</li>
+<li>変数の値を出力するには、<code>printf</code>の <strong>フォーマット指定子</strong> を用いる。<ul>
+<li>例えば、int型の変数numを出力するときは、<code>printf(&quot;%d&quot;, num)</code>のように書く。</li>
+<li>この<code>%d</code>の部分が、フォーマット指定子と呼ばれていて、<code>,</code>の後の変数を出力する。<table><tr><td>型名</td><td>フォーマット指定子</td></tr>
+<tr><td>int</td><td>%d</td></tr>
+<tr><td>long long</td><td>%ld</td></tr>
+<tr><td>double</td><td>%lf</td></tr>
+<tr><td>char</td><td>%c</td></tr></table></li>
+</ul>
+</li>
+<li>例えば、100と17について、四則演算の結果を表示するプログラムは、以下のように書く。<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--preprocessor syntax--include syntax--c"><span class="syntax--keyword syntax--control syntax--directive syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--directive syntax--c"><span>#</span></span><span>include</span></span><span class="syntax--string syntax--quoted syntax--other syntax--lt-gt syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&lt;</span></span><span>stdio.h</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span class="syntax--meta syntax--function syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--entity syntax--name syntax--function syntax--c"><span>main</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span>&nbsp;num1&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>100</span></span><span>,&nbsp;num2&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>17</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span>+</span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span>=</span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;num1,&nbsp;num2,&nbsp;num1</span><span class="syntax--keyword syntax--operator syntax--c"><span>+</span></span><span>num2);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span>-</span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span>=</span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;num1,&nbsp;num2,&nbsp;num1</span><span class="syntax--keyword syntax--operator syntax--c"><span>-</span></span><span>num2);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span>*</span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span>=</span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;num1,&nbsp;num2,&nbsp;num1</span><span class="syntax--keyword syntax--operator syntax--c"><span>*</span></span><span>num2);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span>/</span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span>=</span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span>...</span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;num1,&nbsp;num2,&nbsp;num1</span><span class="syntax--keyword syntax--operator syntax--c"><span>/</span></span><span>num2,&nbsp;num1</span><span class="syntax--keyword syntax--operator syntax--c"><span>%</span></span><span>num2);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>return</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></div></pre>
+</li>
+</ul>
+<p><a name="&#x5165;&#x529B;"> </a></p>
+</li>
+<li><p>入力</p>
+<ul>
+<li>次の <a href="http://hogehoge.html">問題</a> 解いてみよう！<ul>
+<li>標準入力から、整数A, Bが与えられる。</li>
+<li>A+Bを１行で出力せよ。</li>
+</ul>
+</li>
+<li>この問題を解くためには、入力を受け取る必要がある！！</li>
+<li>C言語では、入力を受け取るのに、<code>scanf</code>という関数を使う。<ul>
+<li>使い方は、<code>scanf(&quot;%d&quot;, &amp;num)</code>のように、<code>scanf(&quot;フォーマット指定子&quot;, &amp;変数名)</code>で使う。<ul>
+<li>フォーマット指定子は、<code>printf</code>の時と同じものを用いる。</li>
+<li>変数名の前につける <strong>&amp;</strong> を忘れないようにする。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>入力の取り方がわかったところで、先ほどの問題を解いてみよう。</li>
+<li>コード例<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--preprocessor syntax--include syntax--c"><span class="syntax--keyword syntax--control syntax--directive syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--directive syntax--c"><span>#</span></span><span>include</span></span><span class="syntax--string syntax--quoted syntax--other syntax--lt-gt syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&lt;</span></span><span>stdio.h</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span class="syntax--meta syntax--function syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--entity syntax--name syntax--function syntax--c"><span>main</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span>&nbsp;num1,&nbsp;num2;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>scanf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span>&nbsp;</span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>&amp;</span></span><span>num1,&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>&amp;</span></span><span>num2);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;num1</span><span class="syntax--keyword syntax--operator syntax--c"><span>+</span></span><span>num2);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>return</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></div></pre>
+</li>
+<li>書けたら、提出してみよう！！</li>
+<li>ACできたら、次の <a href="http://hogehoge.html">問題</a>も解いてみよう。<ul>
+<li>標準入力から小数A, Bが与えられる。</li>
+<li>A+Bを1行で出力せよ。</li>
+</ul>
+</li>
+<li>先ほどのコードの、<code>int</code>の部分を<code>double</code>に、<code>%d</code>の部分を<code>%lf</code>に変えるだけです。</li>
+</ul>
+<p><a name="&#x6761;&#x4EF6;&#x5206;&#x5C90;"> </a></p>
+</li>
+<li><p>条件分岐</p>
+<ul>
+<li>次の <a href="http://hogehoge.html">問題</a> を解いてみよう！<ul>
+<li>標準入力から、西暦が与えられる。</li>
+<li>与えられた年が、うるう年なら <strong>leap year</strong> を、そうでないなら <strong>no leap year</strong> を出力せよ。</li>
+<li>なお、うるう年の条件は、次の方法で判定できる。<ul>
+<li>4の倍数である</li>
+<li>100の倍数でない</li>
+<li>ただし、400の倍数は、うるう年である</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>この問題を解くためには、うるう年かどうかで、条件分岐を行う必要がある。</li>
+<li>条件分岐には、<code>if文</code>を使う。<ul>
+<li>使い方は、<code>if(条件式)</code>で条件式が満たされた時に、次の１文が実行される。</li>
+<li><code>{}</code>で囲むことによって、複数の文を1文として、扱うことができる。</li>
+<li><code>else</code>を使うことによって、条件式が成り立たなかった時に実行する文を記述できる。</li>
+<li><strong>条件式</strong> に使える記号は、以下のものがある。<table><tr><td>記号</td><td>意味</td></tr>
+<tr><td>==</td><td> 等号　左辺と右辺が等しい時に成り立つ </td></tr>
+<tr><td>!=</td><td> 左辺と右辺が異なる時に成り立つ </td></tr>
+<tr><td> &lt; </td><td> 左辺が右辺よりも小さい時に成り立つ </td></tr>
+<tr><td> &gt; </td><td> 左辺が右辺よりも大きい時に成り立つ </td></tr>
+<tr><td> &lt;= </td><td> 左辺が右辺以下の時に成り立つ </td></tr>
+<tr><td> &gt;= </td><td> 左辺が右辺以上の時に成り立つ </td></tr></table></li>
+</ul>
+</li>
+<li>例えば、numが0の時に、<strong>ZERO</strong>、それ以外の時に、<strong>NO ZERO</strong> と表示するコードは以下のようにかける。<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(num&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>==</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>)&nbsp;printf(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>ZERO</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span>&nbsp;printf(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>NO&nbsp;ZERO</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></div></pre>
+</li>
+<li>上記のコードは、<code>{}</code>を使って、以下のようにもかける。<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(num&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>==</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>)&nbsp;</span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>ZERO</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span>&nbsp;</span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>NO&nbsp;ZERO</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></div></pre>
+</li>
+<li>また、複数の条件分岐を行いたいときは、以下のようにつなげて書くことができる。<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(num&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&gt;</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>)&nbsp;printf(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>positive</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(num&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>)&nbsp;printf(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>negative</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span>&nbsp;printf(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>zero</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></div></pre>
+</li>
+<li>条件分岐の仕方がわかったところで、上記の問題を解いてみよう！！</li>
+<li>AがBの倍数かどうかは、AをBで割った余りが0かどうかで判定できる。</li>
+<li>コード例<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--preprocessor syntax--include syntax--c"><span class="syntax--keyword syntax--control syntax--directive syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--directive syntax--c"><span>#</span></span><span>include</span></span><span class="syntax--string syntax--quoted syntax--other syntax--lt-gt syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&lt;</span></span><span>stdio.h</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span class="syntax--meta syntax--function syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--entity syntax--name syntax--function syntax--c"><span>main</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span>&nbsp;year;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>scanf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>&amp;</span></span><span>year);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(year</span><span class="syntax--keyword syntax--operator syntax--c"><span>%</span></span><span class="syntax--constant syntax--numeric syntax--c"><span>400</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>==</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>)</span><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>leap&nbsp;year</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(year</span><span class="syntax--keyword syntax--operator syntax--c"><span>%</span></span><span class="syntax--constant syntax--numeric syntax--c"><span>100</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>==</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>)</span><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>no&nbsp;leap&nbsp;yaer</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(yaer</span><span class="syntax--keyword syntax--operator syntax--c"><span>%</span></span><span class="syntax--constant syntax--numeric syntax--c"><span>4</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>==</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>)</span><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>leap&nbsp;year</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>no&nbsp;leap&nbsp;year</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>return</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></div></pre>
+</li>
+<li>書けたら、提出してみよう！！</li>
+</ul>
+<p><a name="&#x7E70;&#x308A;&#x8FD4;&#x3057;A"> </a></p>
+</li>
+<li><p>繰り返し(定数回)</p>
+<ul>
+<li>次の <a href="http://hogehoge.html">問題</a> を解いてみよう！<ul>
+<li>標準入力から整数Nが与えられる。</li>
+<li>1 &lt;= i &lt;= N の各iについて、<ul>
+<li>iが3の倍数なら、Fizzを、</li>
+<li>iが5の倍数なら、Buzzを、</li>
+<li>iが15の倍数なら、FizzBuzzを、</li>
+<li>そうでないなら、iを</li>
+<li>i行目に出力せよ。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>1&lt;=i&lt;=Nについて、繰り返しの処理ができれば、条件分岐を用いて解けそう！！</li>
+<li>C言語では、<code>for文</code> を使うことで、繰り返しができる。<ul>
+<li>使い方は、<code>for(初期化式; 条件式; 更新式)</code>で、１回だけ呼ばれる初期化式、毎回呼ばれる条件式、更新式がある。</li>
+<li>まず、for文に入ると、プログラムは、<strong>1回だけ</strong> 初期化式を行う。</li>
+<li>その後、以下の動作を繰り返す。<ul>
+<li>条件式が満たされていないなら、繰り返しを終了する。</li>
+<li>for文の直後の1文を実行する。</li>
+<li>更新式を実行する</li>
+</ul>
+</li>
+<li>if文と同じように、<code>{}</code>で囲むことで、複数の文を、1文にすることができる。</li>
+<li>更新式のあとだけ<code>;</code>がないので注意する。</li>
+</ul>
+</li>
+<li>例えば、1からNまでの数を出力するコードは次のようにかける。<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>for</span></span><span>(i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>1</span></span><span>;&nbsp;i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;=</span></span><span>&nbsp;N;&nbsp;i</span><span class="syntax--keyword syntax--operator syntax--increment syntax--c"><span>++</span></span><span>)&nbsp;printf(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;i);</span></span></div></pre>
+</li>
+<li>繰り返しの方法がわかったところで、上の問題を、解いてみよう！</li>
+<li>コード例<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--preprocessor syntax--include syntax--c"><span class="syntax--keyword syntax--control syntax--directive syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--directive syntax--c"><span>#</span></span><span>include</span></span><span class="syntax--string syntax--quoted syntax--other syntax--lt-gt syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&lt;</span></span><span>stdio.h</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span class="syntax--meta syntax--function syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--entity syntax--name syntax--function syntax--c"><span>main</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span>&nbsp;N,&nbsp;i;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>scanf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>&amp;</span></span><span>N);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>for</span></span><span>(i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>1</span></span><span>;&nbsp;i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;=</span></span><span>&nbsp;N;&nbsp;i</span><span class="syntax--keyword syntax--operator syntax--increment syntax--c"><span>++</span></span><span>)&nbsp;</span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>%</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>15</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>==</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>)</span><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>FizzBuzz</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>%</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>3</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>==</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>)</span><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>Fizz</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>%</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>5</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>==</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>)</span><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>Buzz</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;i);</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>return</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></div></pre>
+</li>
+<li>書けたら、提出してみよう！！</li>
+</ul>
+<p><a name="&#x7E70;&#x308A;&#x8FD4;&#x3057;B"> </a></p>
+</li>
+<li><p>繰り返し（不定回）</p>
+<ul>
+<li>次の <a href="http://hogehoge.html">問題</a> を解いてみよう！<ul>
+<li>標準入力から、整数Aが与えられる。</li>
+<li>整数Aの桁に含まれる3の個数を出力せよ。</li>
+</ul>
+</li>
+<li>C言語では、<code>for文</code>以外に、<code>while文</code>を使って繰り返しを行うことができる。</li>
+<li>使い方は、<code>while(条件式)</code>で条件式が満たされている間、直後の１文が繰り返される。<ul>
+<li><code>if文</code>や<code>for文</code>と同じように、<code>{}</code>で囲むことによって、複数の文を1文として扱える。</li>
+</ul>
+</li>
+<li>例えば、num1をnum2以上の最小の2冪にしたい場合は、次のようにかける。<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span>num1&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>1</span></span><span>;</span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>while</span></span><span>(num1&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;</span></span><span>&nbsp;num2)&nbsp;num1&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--compound syntax--c"><span>*=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>2</span></span><span>;</span></span></div></pre>
+</li>
+<li>繰り返しの方法がわかったところで、上の問題を解いてみよう！<ul>
+<li>この問題では、下１桁が３かどうか見たあとに、10で割っていく操作を繰り返せば良い。</li>
+</ul>
+</li>
+<li>コード例<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--preprocessor syntax--include syntax--c"><span class="syntax--keyword syntax--control syntax--directive syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--directive syntax--c"><span>#</span></span><span>include</span></span><span class="syntax--string syntax--quoted syntax--other syntax--lt-gt syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&lt;</span></span><span>stdio.h</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span class="syntax--meta syntax--function syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--entity syntax--name syntax--function syntax--c"><span>main</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span>&nbsp;A,&nbsp;ans&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>scanf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>&amp;</span></span><span>A);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>while</span></span><span>(A&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&gt;</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>)&nbsp;</span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(A</span><span class="syntax--keyword syntax--operator syntax--c"><span>%</span></span><span class="syntax--constant syntax--numeric syntax--c"><span>10</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>==</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>3</span></span><span>)&nbsp;ans</span><span class="syntax--keyword syntax--operator syntax--increment syntax--c"><span>++</span></span><span>;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--compound syntax--c"><span>/=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>10</span></span><span>;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;ans);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>return</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></div></pre>
+</li>
+<li>書けたら、提出してみよう！</li>
+</ul>
+<p><a name="&#x914D;&#x5217;"> </a></p>
+</li>
+<li><p>配列</p>
+<ul>
+<li>次の <a href="http://hogehoge.html">問題</a> を解いてみよう！<ul>
+<li>標準入力から、整数Nと長さNの数列が与えられる (N &lt;= 100)。</li>
+<li>数列を反転させたものを出力せよ。</li>
+</ul>
+</li>
+<li>この問題を特には、数列を一度変数に保存する必要がある。<ul>
+<li><code>int a, b, c, d, ...</code>のように、最大で100個もの変数を作るのは、大変！！</li>
+</ul>
+</li>
+<li>C言語には、配列というものがあるので、それを使おう！！<ul>
+<li>配列とは、複数の変数を連続するメモリに、格納したもの。</li>
+</ul>
+</li>
+<li>使い方は、<code>int num[100]</code>のように、<code>型名　変数名[サイズ]</code>で宣言し、アクセスするときは、<code>num[0]</code>のように、<code>変数名[インデックス]</code>でアクセスできる。<ul>
+<li>インデックスは、<strong>0</strong> で始まり、<strong>サイズ-1</strong> で終わるので、注意する！！</li>
+<li>上記の例だと、<code>num[0]~num[99]</code>までは、アクセスできるが、<code>num[100]</code>は配列外参照と言ってエラーが起きる！！</li>
+</ul>
+</li>
+<li>例えば、サイズ10の配列numを用意し、0~9までを代入するコードは、次のようになる。<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span>&nbsp;num[</span><span class="syntax--constant syntax--numeric syntax--c"><span>10</span></span><span>],&nbsp;i;</span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>for</span></span><span>(i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;&nbsp;i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>10</span></span><span>;&nbsp;i</span><span class="syntax--keyword syntax--operator syntax--increment syntax--c"><span>++</span></span><span>)&nbsp;num[i]&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;i;</span></span></div></pre>
+</li>
+<li>このように、<code>配列</code>と<code>for文</code>の組み合わせはよく使うので、覚えておくと良い。</li>
+<li>配列の使い方がわかったところで、上の問題を解いてみよう！！</li>
+<li>コード例<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--preprocessor syntax--include syntax--c"><span class="syntax--keyword syntax--control syntax--directive syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--directive syntax--c"><span>#</span></span><span>include</span></span><span class="syntax--string syntax--quoted syntax--other syntax--lt-gt syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&lt;</span></span><span>stdio.h</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span class="syntax--meta syntax--function syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--entity syntax--name syntax--function syntax--c"><span>main</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span>&nbsp;N,&nbsp;a[</span><span class="syntax--constant syntax--numeric syntax--c"><span>110</span></span><span>],&nbsp;i;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>scanf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>&amp;</span></span><span>N);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>for</span></span><span>(i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;&nbsp;i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;</span></span><span>&nbsp;N;&nbsp;i</span><span class="syntax--keyword syntax--operator syntax--increment syntax--c"><span>++</span></span><span>)</span><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>scanf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>&amp;</span></span><span>a[i]);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>for</span></span><span>(i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;N</span><span class="syntax--keyword syntax--operator syntax--c"><span>-</span></span><span class="syntax--constant syntax--numeric syntax--c"><span>1</span></span><span>;&nbsp;i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&gt;=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;&nbsp;i</span><span class="syntax--keyword syntax--operator syntax--decrement syntax--c"><span>--</span></span><span>)</span><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;a[i]);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>return</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></div></pre>
+</li>
+<li>書けたら、提出してみよう！！</li>
+</ul>
+<p><a name="&#x6587;&#x5B57;&#x5217;"> </a></p>
+</li>
+<li><p>文字列</p>
+<ul>
+<li>次の <a href="http://hogehoge.html">問題</a> を解いてみよう！<ul>
+<li>文字列Sが与えられる。</li>
+<li>Sが回文かどうか判定せよ。</li>
+</ul>
+</li>
+<li>文字列は、文字の配列で表される。</li>
+<li>文字列も、他の変数と同じように、入出力を行うことができる。<ul>
+<li>フォーマット指定子は<code>%s</code>を使う。</li>
+<li>入力の際は、他の変数と異なり、変数名の前に、<code>&amp;</code>を <strong>つけない</strong> ので注意する。<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>char</span></span><span>&nbsp;s[</span><span class="syntax--constant syntax--numeric syntax--c"><span>110</span></span><span>];</span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--entity syntax--name syntax--function syntax--c"><span>scanf</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%s</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;s</span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span>;</span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--entity syntax--name syntax--function syntax--c"><span>printf</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%s</span></span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;s</span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span>;</span></span></span></div></pre>
+</li>
+</ul>
+</li>
+<li>C言語には、文字列を扱うための関数がたくさん用意されている。<ul>
+<li>使用するためには、<code>&lt;string.h&gt;</code>をincludeする必要がある。</li>
+<li>よく使うものを、以下に挙げる。<table><tr><td>関数名</td><td>引数</td><td>動作</td></tr>
+<tr><td>strcpy</td><td>char* a, char* b</td><td>aにbをコピーする</td></tr>
+<tr><td>strcat</td><td>char* a, char* b</td><td>aの末尾にbを結合する</td></tr>
+<tr><td>strcmp</td><td>char* a, char* b</td><td>aとbを比較して、a &lt; bなら負, a == bなら0, a &gt; bなら正の値が返る</td></tr>
+<tr><td>strlen</td><td>char* a</td><td>文字列aの長さを返す</td></tr></table></li>
+</ul>
+</li>
+<li>回文かどうか判定するには、文字列の長さがわかれば良さそう！！</li>
+<li>コード例<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--preprocessor syntax--include syntax--c"><span class="syntax--keyword syntax--control syntax--directive syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--directive syntax--c"><span>#</span></span><span>include</span></span><span class="syntax--string syntax--quoted syntax--other syntax--lt-gt syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&lt;</span></span><span>stdio.h</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--preprocessor syntax--include syntax--c"><span class="syntax--keyword syntax--control syntax--directive syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--directive syntax--c"><span>#</span></span><span>include</span></span><span class="syntax--string syntax--quoted syntax--other syntax--lt-gt syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&lt;</span></span><span>string.h</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span class="syntax--meta syntax--function syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--entity syntax--name syntax--function syntax--c"><span>main</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--type syntax--c"><span>char</span></span><span>&nbsp;s[</span><span class="syntax--constant syntax--numeric syntax--c"><span>110</span></span><span>];</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span>&nbsp;len,&nbsp;i,&nbsp;isKaibun&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>1</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>scanf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%s</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;s);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;len&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>strlen</span></span><span>(s);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>for</span></span><span>(</span><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span>&nbsp;i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;&nbsp;i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;=</span></span><span>&nbsp;len&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>/</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>2</span></span><span>;&nbsp;i</span><span class="syntax--keyword syntax--operator syntax--increment syntax--c"><span>++</span></span><span>)&nbsp;</span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(s[i]&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>!=</span></span><span>&nbsp;s[len</span><span class="syntax--keyword syntax--operator syntax--c"><span>-</span></span><span>i</span><span class="syntax--keyword syntax--operator syntax--c"><span>-</span></span><span class="syntax--constant syntax--numeric syntax--c"><span>1</span></span><span>])&nbsp;isKaibun&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(isKaibun)</span><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>Kaibun</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span>no&nbsp;Kaibun</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>return</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></div></pre>
+</li>
+<li>書けたら、提出してみよう！！</li>
+<li>ACできたら、次の <a href="http://hogehoge.html">問題</a> を解いてみよう！<ul>
+<li>大文字と小文字からなる文字列Sが与えられる。</li>
+<li>各文字について、大文字と小文字を反転したものを出力せよ。</li>
+</ul>
+</li>
+<li>この問題を解くためには、まず、文字cが大文字か小文字かを判定する必要がある。</li>
+<li>プログラム内では、文字は数字として扱われており、&#39;A&#39;~&#39;Z&#39;, &#39;a&#39;~&#39;z&#39;はそれぞれ、連続しているので、<code>if文</code>を使って判定することができる。<ul>
+<li>具体的な数字を知りたい場合は、<a href="http://www9.plala.or.jp/sgwr-t/c_sub/ascii.html">ASCIIコード</a>を参照。</li>
+<li>コード例<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(c</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&gt;=</span></span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>A</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--logical syntax--c"><span>&amp;&amp;</span></span><span>&nbsp;c&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;=</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>Z</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>)&nbsp;printf(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%c</span></span><span>&nbsp;is&nbsp;Oomoji</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;c);</span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(c&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&gt;=</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>a</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--logical syntax--c"><span>&amp;&amp;</span></span><span>&nbsp;c&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;=</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>z</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>)&nbsp;printf(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%c</span></span><span>&nbsp;is&nbsp;komoji</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;c);</span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span>&nbsp;printf(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%c</span></span><span>&nbsp;is&nbsp;not&nbsp;Alphabet</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;c);</span></span></div></pre>
+</li>
+</ul>
+</li>
+<li>また、文字cが何番目のアルファベットであるかは、大文字なら&#39;A&#39;との差を、小文字なら&#39;a&#39;との差をとることで、知ることができる。<ul>
+<li>コード例<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span>&nbsp;n;</span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(c&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&gt;=</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>A</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--logical syntax--c"><span>&amp;&amp;</span></span><span>&nbsp;c&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;=</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>Z</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>)&nbsp;n&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;c&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>-</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>A</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>;</span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(c&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&gt;=</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>a</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--logical syntax--c"><span>&amp;&amp;</span></span><span>&nbsp;c&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;=</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>z</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>)&nbsp;n&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;c&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>-</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>a</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>;</span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--entity syntax--name syntax--function syntax--c"><span>printf</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%c</span></span><span>&nbsp;is&nbsp;</span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span>th&nbsp;Alphabet</span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;c,&nbsp;n</span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span>;</span></span></span></div></pre>
+</li>
+</ul>
+</li>
+<li>よって、上の問題を解くコードは、以下のように書ける。<ul>
+<li>コード例<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--preprocessor syntax--include syntax--c"><span class="syntax--keyword syntax--control syntax--directive syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--directive syntax--c"><span>#</span></span><span>include</span></span><span class="syntax--string syntax--quoted syntax--other syntax--lt-gt syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&lt;</span></span><span>stdio.h</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--preprocessor syntax--include syntax--c"><span class="syntax--keyword syntax--control syntax--directive syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--directive syntax--c"><span>#</span></span><span>include</span></span><span class="syntax--string syntax--quoted syntax--other syntax--lt-gt syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&lt;</span></span><span>string.h</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span class="syntax--meta syntax--function syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--entity syntax--name syntax--function syntax--c"><span>main</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--type syntax--c"><span>char</span></span><span>&nbsp;s[</span><span class="syntax--constant syntax--numeric syntax--c"><span>110</span></span><span>];</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span>&nbsp;len,&nbsp;i;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>scanf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%s</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;s);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;len&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>strlen</span></span><span>(s);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>for</span></span><span>(i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;&nbsp;i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;</span></span><span>&nbsp;len;&nbsp;i</span><span class="syntax--keyword syntax--operator syntax--increment syntax--c"><span>++</span></span><span>)&nbsp;</span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(s[i]&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&gt;=</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>A</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--logical syntax--c"><span>&amp;&amp;</span></span><span>&nbsp;s[i]&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;=</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>Z</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>)&nbsp;s[i]&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--compound syntax--c"><span>+=</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>a</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>-</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>A</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>else</span></span><span>&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(s[i]&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&gt;=</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>a</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--logical syntax--c"><span>&amp;&amp;</span></span><span>&nbsp;s[i]&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;=</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>z</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>)&nbsp;s[i]&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--compound syntax--c"><span>+=</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>A</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>-</span></span><span>&nbsp;</span><span class="syntax--string syntax--quoted syntax--single syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&#39;</span></span><span>a</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&#39;</span></span></span><span>;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%s</span></span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;s);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>return</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></div></pre>
+</li>
+</ul>
+</li>
+<li>書けたら、提出してみよう！！</li>
+</ul>
+<p><a name="&#x95A2;&#x6570;"> </a></p>
+</li>
+<li>関数<ul>
+<li>次の <a href="http://hogehoge.html">問題</a> を解いてみよう！<ul>
+<li>整数Nが与えられる。</li>
+<li>N!を出力せよ。</li>
+</ul>
+</li>
+<li>N! = 1 * 2 * ... * n -1 * n より、1からnまで<code>for文</code>を回せば、答えが求まりそう。</li>
+<li>コード例<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--preprocessor syntax--include syntax--c"><span class="syntax--keyword syntax--control syntax--directive syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--directive syntax--c"><span>#</span></span><span>include</span></span><span class="syntax--string syntax--quoted syntax--other syntax--lt-gt syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&lt;</span></span><span>stdio.h</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span class="syntax--meta syntax--function syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--entity syntax--name syntax--function syntax--c"><span>main</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span>&nbsp;N,&nbsp;ans&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>1</span></span><span>,&nbsp;i;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>scanf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>&amp;</span></span><span>N);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>for</span></span><span>(i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>1</span></span><span>;&nbsp;i&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;=</span></span><span>&nbsp;N;&nbsp;i</span><span class="syntax--keyword syntax--operator syntax--increment syntax--c"><span>++</span></span><span>)&nbsp;ans&nbsp;</span><span class="syntax--keyword syntax--operator syntax--assignment syntax--c"><span>=</span></span><span>&nbsp;ans&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>*</span></span><span>&nbsp;i;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;ans);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>return</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></div></pre>
+</li>
+<li>この処理は、関数を使っても実現できる。</li>
+<li>関数は、<code>返り値の型　関数名(引数) {関数の中身; retrun 返り値;}</code>の形で定義する。</li>
+<li>関数の呼び出しは、<code>関数名(引数)</code>で行う。</li>
+<li>コード例<pre class="editor-colors lang-c"><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--preprocessor syntax--include syntax--c"><span class="syntax--keyword syntax--control syntax--directive syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--directive syntax--c"><span>#</span></span><span>include</span></span><span class="syntax--string syntax--quoted syntax--other syntax--lt-gt syntax--include syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&lt;</span></span><span>stdio.h</span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&gt;</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span class="syntax--meta syntax--function syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--entity syntax--name syntax--function syntax--c"><span>func</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span>&nbsp;n</span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span>&nbsp;</span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>if</span></span><span>(n&nbsp;</span><span class="syntax--keyword syntax--operator syntax--comparison syntax--c"><span>&lt;=</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>1</span></span><span>)&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>return</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>1</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>return</span></span><span>&nbsp;n&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>*</span></span><span class="syntax--meta syntax--function-call syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--function-call syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--any-method syntax--c"><span>func</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--c"><span>(</span></span></span><span>n&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>-</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>1</span></span><span>);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span class="syntax--meta syntax--function syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--function syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--entity syntax--name syntax--function syntax--c"><span>main</span></span><span class="syntax--meta syntax--parens syntax--c"><span class="syntax--punctuation syntax--section syntax--parens syntax--begin syntax--c"><span>(</span></span><span class="syntax--punctuation syntax--section syntax--parens syntax--end syntax--c"><span>)</span></span></span><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--begin syntax--c"><span>{</span></span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--storage syntax--type syntax--c"><span>int</span></span><span>&nbsp;N;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>scanf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,&nbsp;</span><span class="syntax--keyword syntax--operator syntax--c"><span>&amp;</span></span><span>N);</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--support syntax--function syntax--leading syntax--c"><span>&nbsp;&nbsp;&nbsp;</span></span><span class="syntax--support syntax--function syntax--C99 syntax--c"><span>printf</span></span><span>(</span><span class="syntax--string syntax--quoted syntax--double syntax--c"><span class="syntax--punctuation syntax--definition syntax--string syntax--begin syntax--c"><span>&quot;</span></span><span class="syntax--constant syntax--other syntax--placeholder syntax--c"><span>%d</span></span><span class="syntax--constant syntax--character syntax--escape syntax--c"><span>\n</span></span><span class="syntax--punctuation syntax--definition syntax--string syntax--end syntax--c"><span>&quot;</span></span></span><span>,</span><span class="syntax--meta syntax--function-call syntax--c"><span class="syntax--punctuation syntax--whitespace syntax--function-call syntax--leading syntax--c"><span>&nbsp;</span></span><span class="syntax--support syntax--function syntax--any-method syntax--c"><span>func</span></span><span class="syntax--punctuation syntax--definition syntax--parameters syntax--c"><span>(</span></span></span><span>N));</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--keyword syntax--control syntax--c"><span>return</span></span><span>&nbsp;</span><span class="syntax--constant syntax--numeric syntax--c"><span>0</span></span><span>;</span></span></span></span></div><div class="line"><span class="syntax--source syntax--c"><span class="syntax--meta syntax--function syntax--c"><span class="syntax--meta syntax--block syntax--c"><span class="syntax--punctuation syntax--section syntax--block syntax--end syntax--c"><span>}</span></span></span></span></span></div></pre>
+</li>
+</ul>
+</li>
+</ol></body>
+</html>
